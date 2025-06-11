@@ -1,0 +1,23 @@
+{
+  "name": "secure-ci-cd-node-app",
+  "version": "1.0.0",
+  "description": "Secure CI/CD pipeline for a dockerized node.js app with SAST",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasmine-touati/secure-ci-cd-node-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yasmine-touati/secure-ci-cd-node-app/issues"
+  },
+  "homepage": "https://github.com/yasmine-touati/secure-ci-cd-node-app#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
