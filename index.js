@@ -1,14 +1,28 @@
+require('dotenv').config();
 const express = require('express');
-const app = express();
 const path = require('path');
+const helmet = require('helmet');
 
-app.use(express.static('public'));
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+
+const secret = process.env.APP_SECRET || 'default-secret';
+
+app.use(helmet());
+app.disable('x-powered-by');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.get('/secret', (req, res) => {
+  res.send(`<h1>Shhh</h1><p>The secret is: ${secret}</p>`);
 });
 
-const PORT = process.env.PORT || 3000;
+app.use((req, res) => {
+  res.status(404).send('404 - Not Found');
+});
+
 app.listen(PORT, () => {
-  console.log(`App is running on port ${PORT}`);
+  console.log(`App running on port ${PORT}`);
 });
