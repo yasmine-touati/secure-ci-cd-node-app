@@ -30,46 +30,28 @@
       color: black;
       border: none;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
 
     button:hover {
       background-color: #33ff33;
+    }
+
+    button:active {
+      background-color: #00cc00;
+    }
+
+    button:disabled {
+      background-color: #666;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
   <h1>Terminal access granted</h1>
   <div id="console"></div>
-  <button onclick="startHacking()">Initiate protocol</button>
+  <button id="hackButton">Initiate protocol</button>
 
-  <script>
-    const consoleEl = document.getElementById('console');
-    const lines = [
-      "[+] Establishing secure link to mainframe...",
-      "[+] Bypassing firewall v3.4.2...",
-      "[+] Injecting payload...",
-      "[+] Accessing confidential data...",
-      "[!] Intrusion detection disabled...",
-      "[+] Transferring files to remote server...",
-      "[+] Covering tracks...",
-      "[✓] Hack complete. No traces left."
-    ];
-
-    let index = 0;
-
-    function startHacking() {
-      consoleEl.textContent = '';
-      index = 0;
-      const interval = setInterval(() => {
-        if (index < lines.length) {
-          consoleEl.textContent += lines[index] + '\n';
-          consoleEl.scrollTop = consoleEl.scrollHeight;
-          index++;
-        } else {
-          clearInterval(interval);
-        }
-      }, 700);
-    }
-  </script>
+  <script src="/js/terminal.js"></script>
 </body>
 </html>
