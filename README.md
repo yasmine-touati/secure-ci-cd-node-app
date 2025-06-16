@@ -15,27 +15,27 @@ This project is a simple Node.js web application designed to simulate a secure s
 ## setup
 
 1. clone the repo using the following commands
-   git clone https://github.com/yasmine-touati/secure-ci-cd-node-app
-   cd secure-ci-cd-node-app
+   - git clone https://github.com/yasmine-touati/secure-ci-cd-node-app
+   - cd secure-ci-cd-node-app
    
 2. install dependencies using
-   npm install
+   - npm install
 
-3. create an .env file
-   SECRET=place-your-secret-message-here
-   PORT=3000
+3. create an .env file containing
+   - SECRET=place-your-secret-message-here
+   - PORT=3000
   
 4. run locally using the command
-   node index.js
+   - node index.js
 
 5. visit the following on your browser
-   http://localhost:3000
+   - http://localhost:3000
 
 ## docker
   - build the app using
-      docker build -t secure-ci-cd-node-app .
+       - docker build -t secure-ci-cd-node-app .
   - run the app using
-    docker run -p 3000:3000 --env-file .env secure-ci-cd-node-app
+      - docker run -p 3000:3000 --env-file .env secure-ci-cd-node-app
 
 ## security features
   - helmet middleware for setting secure http headers
